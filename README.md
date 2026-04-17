@@ -1,6 +1,6 @@
 # Booking & Workforce Allocation System
 
-This is a full-stack web application built for managing agricultural bookings and workforce allocation. The idea is simple — a farmer books a service for their land, and the system automatically schedules all the crop activities and assigns the most cost-efficient team to each one when the farmer approves it.
+This is a full-stack web application built for managing agricultural bookings and workforce allocation. The idea is simple — a executive makes a booking for a farmer for their land, and the system automatically schedules all the crop activities and assigns the most cost-efficient team to each one when the farmer approves it.
 
 ---
 
@@ -8,11 +8,11 @@ This is a full-stack web application built for managing agricultural bookings an
 
 When we creates a booking, the system generates a full activity schedule based on the crop type (Rice or Wheat). Each crop has 18 activities — things like land preparation, sowing, irrigation, pest control, and harvesting. These activities are scheduled one after another, each starting the day after the previous one finishes.
 
-No team is assigned upfront. The farmer reviews each activity and clicks **Accept** when they're ready. At that point, the system finds the best available team — the one that can complete the job at the lowest cost — and assigns them. If no team is free, the activity gets a **Resource Conflict** status and shows the next available date.
+No team is assigned upfront. Each activity is reviewed and when we click *Accept*, the system finds the best available team — the one that can complete the job at the lowest cost — and assigns them. If no team is free, the activity gets a **Resource Conflict** status and shows the next available date.
 
-The farmer can also **Reschedule** an activity (up to 3 times). When rescheduled, all downstream activities shift automatically. On the 3rd reschedule, the activity is auto-accepted.
+The farmer can also *Reschedule* an activity (up to 3 times). When rescheduled, all downstream activities shift automatically. On the 3rd reschedule, the activity is auto-accepted.
 
-Once a team finishes a job, the farmer clicks **Mark Complete**. The team is freed up and becomes available for new assignments.
+Once a team finishes a job, click **Mark Complete**. The team is freed up and becomes available for new assignments.
 
 ---
 

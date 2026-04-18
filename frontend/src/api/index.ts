@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = window.location.hostname === 'localhost'
   ? '/api'
-  : 'https://your-render-app-name.onrender.com/api';
+  : 'https://booking-workforce-allocation-system.onrender.com/api';
 
 const api = axios.create({ baseURL: BASE_URL });
 

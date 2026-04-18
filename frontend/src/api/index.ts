@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: (import.meta as any).env?.VITE_API_URL || '/api' });
+const BASE_URL = window.location.hostname === 'localhost'
+  ? '/api'
+  : 'https://your-render-app-name.onrender.com/api';
+
+const api = axios.create({ baseURL: BASE_URL });
 
 export const getDashboard = () => api.get('/dashboard').then((r) => r.data);
 export const getBookings = () => api.get('/bookings').then((r) => r.data);

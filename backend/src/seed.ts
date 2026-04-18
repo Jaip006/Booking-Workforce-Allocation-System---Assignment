@@ -118,7 +118,9 @@ async function seed() {
       for (const tmpl of sortedActivities) {
         if (tmpl.stepNumber > 1) currentStart = addDays(currentStart, tmpl.gapDays);
 
-        const result = await allocateTeam(currentStart, landSize, tmpl.efficiency, tmpl.bookingAmountPerAcre);
+        const nextTmpl = sortedActivities[sortedActivities.indexOf(tmpl) + 1];
+        const maxDays = nextTmpl ? Math.max(nextTmpl.gapDays, 3) : 30;
+        const result = await allocateTeam(currentStart, landSize, tmpl.efficiency, tmpl.bookingAmountPerAcre, maxDays);
 
         const activity = await ScheduledActivity.create({
           bookingId: booking._id,
